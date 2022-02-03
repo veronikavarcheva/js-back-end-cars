@@ -1,0 +1,10 @@
+      {{!-- with e helper, който ни помага да не пишем всеки път car.name, а директно да търсим свойството name --}}
+      {{#with car}} 
+      <h1>{{name}}</h1>
+      <img class="cube" src="/static/images/{{imageUrl}}">
+      <div class="details">
+        <p><span>Description:</span> {{description}}</p>
+        <p><span>Price:</span> {{price}}</p>
+        <a class="btn" href="/">Back</a>
+      </div>
+      {{/with}}
