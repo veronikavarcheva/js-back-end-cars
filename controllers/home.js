@@ -2,9 +2,11 @@
 
 module.exports = {
     async home(req, res){
-        const cars = await req.storage.getAll();
+        // console.log(req.query);
+        const cars = await req.storage.getAll(req.query);
         // console.log(cars);
-                res.render('index', {cars, title: 'Carbicle'}); // след като оправим layout-a, маxame  ", {layout: false}" като втори параметър на функцията render()
+
+                res.render('index', {cars, title: 'Carbicle', query: req.query}); // след като оправим layout-a, маxame  ", {layout: false}" като втори параметър на функцията render()
                                              //подадения обект {} със свойство cars e Context-a, на който  можем да вземем само cars                  
     }
 };
